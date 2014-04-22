@@ -1,0 +1,243 @@
+﻿<Window x:Class="DeviceFinder.View.Views.DeviceFinderControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:view="clr-namespace:DeviceFinder.ViewModel;assembly=DeviceFinder.ViewModel"
+        DataContext="{Binding DeviceFinderWindowViewModel,
+                              Source={x:Static view:ViewModelManager.Instance}}"
+        d:DesignHeight="900"
+        d:DesignWidth="1100"
+        mc:Ignorable="d">
+    <!--  Einbinden von Ressourcen  -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Ressources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--  Header  -->
+        <Grid Background="{StaticResource HeaderBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--  Command="{Binding Path=SyncCommand}"  -->
+            <!--  Sync Database  -->
+            <telerik:RadButton x:Name="SyncButton"
+                               Grid.Column="0"
+                               Command="{Binding Path=SyncCommand}"
+                               Style="{StaticResource ButtonStyle}"
+                               ToolTip="Syncronisiere die Excel Datei mit der Datenbank">
+                <StackPanel>
+                    <Path Width="32.3"
+                          Height="19"
+                          Data="F1 M 30.4792,27.3126L 56.6041,27.3126C 57.9158,27.3126 58.9791,27.9801 58.9791,29.2918C 58.9791,30.6034 57.9158,31.2709 56.6041,31.2709L 30.4792,31.2709C 29.1675,31.2709 28.1042,30.6034 28.1042,29.2917C 28.1042,27.98 29.1675,27.3126 30.4792,27.3126 Z M 30.4791,36.8125L 60.9582,36.8126C 62.2699,36.8126 63.3332,37.4801 63.3332,38.7918C 63.3332,40.1035 61.8827,40.6887 60.571,40.6887L 30.092,40.6886C 28.7803,40.6886 28.1041,40.1034 28.1041,38.7917C 28.1041,37.48 29.1675,36.8125 30.4791,36.8125 Z M 30.4792,46.3125L 53.0415,46.3126C 54.3532,46.3126 55.4165,46.9801 55.4165,48.2917C 55.4165,49.6034 54.3532,50.2709 53.0415,50.2709L 30.4792,50.2709C 29.1675,50.2709 28.1042,49.6034 28.1042,48.2917C 28.1042,46.98 29.1675,46.3125 30.4792,46.3125 Z M 16.6122,46.3508L 19.3192,48.7386L 24.1458,42.75L 26.3037,45.1378L 20.2769,52.25L 18.6042,52.25L 14.7735,48.4866L 14.7735,46.3508L 16.6122,46.3508 Z M 16.8293,36.8508L 19.5363,39.2386L 24.3629,33.25L 26.5208,35.6378L 20.494,42.75L 18.8213,42.75L 14.9906,38.9866L 14.9906,36.8508L 16.8293,36.8508 Z M 16.8293,27.3508L 19.5363,29.7385L 24.3629,23.75L 26.5208,26.1378L 20.494,33.25L 18.8213,33.25L 14.9906,29.4866L 14.9906,27.3508L 16.8293,27.3508 Z "
+                          Fill="#FF000000"
+                          Stretch="Fill" />
+                </StackPanel>
+            </telerik:RadButton>
+
+            <telerik:RadButton x:Name="RefreshButton"
+                               Grid.Column="1"
+                               Command="{Binding Path=RefreshCommand}"
+                               Style="{StaticResource ButtonStyle}"
+                               ToolTip="Akualisiere die Tabellen">
+                <StackPanel>
+                    <Path Width="22"
+                          Height="25"
+                          Data="F1 M 38,20.5833C 42.9908,20.5833 47.4912,22.6825 50.6667,26.046L 50.6667,17.4167L 55.4166,22.1667L 55.4167,34.8333L 42.75,34.8333L 38,30.0833L 46.8512,30.0833C 44.6768,27.6539 41.517,26.125 38,26.125C 31.9785,26.125 27.0037,30.6068 26.2296,36.4167L 20.6543,36.4167C 21.4543,27.5397 28.9148,20.5833 38,20.5833 Z M 38,49.875C 44.0215,49.875 48.9963,45.3932 49.7703,39.5833L 55.3457,39.5833C 54.5457,48.4603 47.0852,55.4167 38,55.4167C 33.0092,55.4167 28.5088,53.3175 25.3333,49.954L 25.3333,58.5833L 20.5833,53.8333L 20.5833,41.1667L 33.25,41.1667L 38,45.9167L 29.1487,45.9167C 31.3231,48.3461 34.483,49.875 38,49.875 Z "
+                          Fill="#FF000000"
+                          Stretch="Fill" />
+                </StackPanel>
+            </telerik:RadButton>
+
+            <Grid Grid.Column="2" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!--  language Excel Picker  -->
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="Language Excel: " />
+                <telerik:RadComboBox Grid.Row="0"
+                                     Grid.Column="1"
+                                     ItemsSource="{Binding LanguagesExcel}"
+                                     SelectedValue="{Binding Setting.LanguageExcel}"
+                                     Style="{StaticResource LanguagePickerStyle}" />
+
+                <!--  language DB Picker  -->
+                <TextBlock Grid.Row="1"
+                           Style="{StaticResource TextBlockStyle}"
+                           Text="Language DB: " />
+                <telerik:RadComboBox Grid.Row="1"
+                                     Grid.Column="1"
+                                     ItemsSource="{Binding LanguagesDb}"
+                                     SelectedValue="{Binding Setting.LanguageDB}"
+                                     Style="{StaticResource LanguagePickerStyle}" />
+            </Grid>
+            
+            <!--  header  -->
+            <TextBlock Grid.Column="4"
+                       Style="{StaticResource HeaderStyle}"
+                       Text="DeviceFinder" />
+
+            <!--
+                <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                <command:EventToCommand Command="{Binding Path=LoadModelsCommand}" CommandParameter="{Binding Path=ExcelModels}" />
+                </i:EventTrigger>
+                </i:Interaction.Triggers>
+            -->
+
+        </Grid>
+        <!--  Header end  -->
+        <!--  Body  -->
+        <Grid Grid.Row="1">
+            <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}" telerik:StyleManager.Theme="Windows8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--  Models from Excel Sheet  -->
+                    <Grid Grid.Row="0">
+                        <!--  style  block  -->
+                        <Border Style="{StaticResource BorderStyle}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Path Style="{StaticResource ExcelIcon}" />
+                                    <TextBlock Grid.Column="1"
+                                               Style="{StaticResource ElementTitle}"
+                                               Text="Product Lines from Excel Sheet" />
+                                </Grid>
+                                <Separator Grid.Row="1" Style="{StaticResource SeperatorStyle}" />
+                                <telerik:RadGridView x:Name="ExcelProductLinesGridView"
+                                                     Grid.Row="2"
+                                                     AutoGenerateColumns="false"
+                                                     ItemsSource="{Binding ProductLinesExcel}"
+                                                     Style="{StaticResource GridViewStyle}">
+
+
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="ProductLine">
+                                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                                <telerik:CountFunction Caption="Count: " />
+                                            </telerik:GridViewDataColumn.AggregateFunctions>
+                                        </telerik:GridViewDataColumn>
+
+                                    </telerik:RadGridView.Columns>
+                                    <!--
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ProductLineProperetyViewModels}" Header="Propertys" />
+                                        ItemsSource="{Binding ProductLines}"
+                                        <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="ProductLine">
+                                        <telerik:GridViewDataColumn.AggregateFunctions>
+                                        <telerik:CountFunction Caption="Count: " />
+                                        </telerik:GridViewDataColumn.AggregateFunctions>
+                                        </telerik:GridViewDataColumn>
+                                        
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ProductLineProperetyViewModels}" Header="Propertys" />
+                                        </telerik:RadGridView.Columns>
+                                        
+                                        
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Coriolis}" Header="Coriolis" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Rotameter}" Header="Rotameter" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Magnetic}" Header="Magnetic" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Ultrasonic}" Header="Ultrasonic" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Vortex}" Header="Vortex" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Pressure}" Header="Pressure" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Liquide}" Header="Liquide" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Gas}" Header="Gas" />
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Steam}" Header="Steam" />
+                                    -->
+                                </telerik:RadGridView>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <!--  Models from Database Sheet  -->
+                    <Grid Grid.Row="1">
+                        <!--  style  block  -->
+                        <Border Style="{StaticResource BorderStyle}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Path Style="{StaticResource DatabaseIcon}" />
+                                    <TextBlock Grid.Column="1"
+                                               Style="{StaticResource ElementTitle}"
+                                               Text="Product Lines from Database" />
+                                </Grid>
+                                <Separator Grid.Row="1" Style="{StaticResource SeperatorStyle}" />
+                                <telerik:RadGridView x:Name="DatabaseModelsGridView"
+                                                     Grid.Row="2"
+                                                     ItemsSource="{Binding ProductLinesDb}"
+                                                     Style="{StaticResource GridViewStyle}">
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Product Line">
+                                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                                <telerik:CountFunction Caption="Count: " />
+                                            </telerik:GridViewDataColumn.AggregateFunctions>
+                                        </telerik:GridViewDataColumn>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+            </telerik:RadBusyIndicator>
+
+        </Grid>
+        <!--  Body end  -->
+        <Grid Grid.Row="2" Background="{StaticResource HeaderBackgroundBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1"
+                       Margin="0,5,10,5"
+                       Style="{StaticResource TextBlockStyle}"
+                       Text="{Binding Setting.Version,
+                                      StringFormat='{}Version: {0}',
+                                      FallbackValue='Version:  0000.00.0.00'}"
+                       TextAlignment="Right" />
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FlowConfigurationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FlowConfigurationModelStoreContainer">
+          <EntitySet Name="Common_Language" EntityType="FlowConfigurationModel.Store.Common_Language" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_Locale" EntityType="FlowConfigurationModel.Store.Common_Locale" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductFamily" EntityType="FlowConfigurationModel.Store.Common_ProductFamily" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductFamilyProductLine" EntityType="FlowConfigurationModel.Store.Common_ProductFamilyProductLine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductFamilyPropertyRelation" EntityType="FlowConfigurationModel.Store.Common_ProductFamilyPropertyRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductLine" EntityType="FlowConfigurationModel.Store.Common_ProductLine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductLinePropertyRelation" EntityType="FlowConfigurationModel.Store.Common_ProductLinePropertyRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductProperty" EntityType="FlowConfigurationModel.Store.Common_ProductProperty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_ProductPropertyGroup" EntityType="FlowConfigurationModel.Store.Common_ProductPropertyGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_TranslateSizingWord" EntityType="FlowConfigurationModel.Store.Common_TranslateSizingWord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Common_TranslateSizingWordId" EntityType="FlowConfigurationModel.Store.Common_TranslateSizingWordId" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="FlowConfigurationModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Common_Locale_Common_Language" Association="FlowConfigurationModel.Store.FK_Common_Locale_Common_Language">
+            <End Role="Common_Language" EntitySet="Common_Language" />
+            <End Role="Common_Locale" EntitySet="Common_Locale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamily_Common_TranslateSizingWord" Association="FlowConfigurationModel.Store.FK_Common_ProductFamily_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamilyProductLine_Common_ProductFamily" Association="FlowConfigurationModel.Store.FK_Common_ProductFamilyProductLine_Common_ProductFamily">
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+            <End Role="Common_ProductFamilyProductLine" EntitySet="Common_ProductFamilyProductLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamilyProductLine_Common_ProductLine" Association="FlowConfigurationModel.Store.FK_Common_ProductFamilyProductLine_Common_ProductLine">
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+            <End Role="Common_ProductFamilyProductLine" EntitySet="Common_ProductFamilyProductLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamilyPropertyRelation_Common_ProductFamily" Association="FlowConfigurationModel.Store.FK_Common_ProductFamilyPropertyRelation_Common_ProductFamily">
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+            <End Role="Common_ProductFamilyPropertyRelation" EntitySet="Common_ProductFamilyPropertyRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamilyPropertyRelation_Common_ProductProperty" Association="FlowConfigurationModel.Store.FK_Common_ProductFamilyPropertyRelation_Common_ProductProperty">
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+            <End Role="Common_ProductFamilyPropertyRelation" EntitySet="Common_ProductFamilyPropertyRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductLine_Common_TranslateSizingWordId" Association="FlowConfigurationModel.Store.FK_Common_ProductLine_Common_TranslateSizingWordId">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductLinePropertyRelation_Common_ProductLine" Association="FlowConfigurationModel.Store.FK_Common_ProductLinePropertyRelation_Common_ProductLine">
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+            <End Role="Common_ProductLinePropertyRelation" EntitySet="Common_ProductLinePropertyRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductLinePropertyRelation_Common_ProductProperty" Association="FlowConfigurationModel.Store.FK_Common_ProductLinePropertyRelation_Common_ProductProperty">
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+            <End Role="Common_ProductLinePropertyRelation" EntitySet="Common_ProductLinePropertyRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductProperty_Common_ProductPropertyGroup" Association="FlowConfigurationModel.Store.FK_Common_ProductProperty_Common_ProductPropertyGroup">
+            <End Role="Common_ProductPropertyGroup" EntitySet="Common_ProductPropertyGroup" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductProperty_Common_TranslateSizingWord" Association="FlowConfigurationModel.Store.FK_Common_ProductProperty_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductPropertyGroup_Common_TranslateSizingWord" Association="FlowConfigurationModel.Store.FK_Common_ProductPropertyGroup_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductPropertyGroup" EntitySet="Common_ProductPropertyGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_TranslateSizingWordEntry_Common_Language" Association="FlowConfigurationModel.Store.FK_Common_TranslateSizingWordEntry_Common_Language">
+            <End Role="Common_Language" EntitySet="Common_Language" />
+            <End Role="Common_TranslateSizingWord" EntitySet="Common_TranslateSizingWord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord" Association="FlowConfigurationModel.Store.FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_TranslateSizingWord" EntitySet="Common_TranslateSizingWord" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Common_Language">
+          <Key>
+            <PropertyRef Name="langID" />
+          </Key>
+          <Property Name="langID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Common_Locale">
+          <Key>
+            <PropertyRef Name="localeID" />
+          </Key>
+          <Property Name="localeID" Type="int" Nullable="false" />
+          <Property Name="languageID" Type="int" Nullable="false" />
+          <Property Name="localeCode" Type="nchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Common_ProductFamily">
+          <Key>
+            <PropertyRef Name="productFamilyID" />
+          </Key>
+          <Property Name="productFamilyID" Type="int" Nullable="false" />
+          <Property Name="productFamilyName" Type="int" Nullable="false" />
+          <Property Name="displaySequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductFamilyProductLine">
+          <Key>
+            <PropertyRef Name="productFamilyID" />
+            <PropertyRef Name="productLineID" />
+          </Key>
+          <Property Name="productFamilyID" Type="int" Nullable="false" />
+          <Property Name="productLineID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductFamilyPropertyRelation">
+          <Key>
+            <PropertyRef Name="productFamilyID" />
+            <PropertyRef Name="productPropertyID" />
+          </Key>
+          <Property Name="productFamilyID" Type="int" Nullable="false" />
+          <Property Name="productPropertyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductLine">
+          <Key>
+            <PropertyRef Name="productLineID" />
+          </Key>
+          <Property Name="productLineID" Type="int" Nullable="false" />
+          <Property Name="productLineName" Type="int" Nullable="false" />
+          <Property Name="displaySequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductLinePropertyRelation">
+          <Key>
+            <PropertyRef Name="productLineID" />
+            <PropertyRef Name="productPropertyID" />
+          </Key>
+          <Property Name="productLineID" Type="int" Nullable="false" />
+          <Property Name="productPropertyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductProperty">
+          <Key>
+            <PropertyRef Name="productPropertyID" />
+          </Key>
+          <Property Name="productPropertyID" Type="int" Nullable="false" />
+          <Property Name="productPropertyNameID" Type="int" Nullable="false" />
+          <Property Name="productPropertyGroupID" Type="int" Nullable="false" />
+          <Property Name="displaySequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_ProductPropertyGroup">
+          <Key>
+            <PropertyRef Name="productPropertyGroupID" />
+          </Key>
+          <Property Name="productPropertyGroupID" Type="int" Nullable="false" />
+          <Property Name="productPropertyGroupNameID" Type="int" Nullable="false" />
+          <Property Name="displaySequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Common_TranslateSizingWord">
+          <Key>
+            <PropertyRef Name="langID" />
+            <PropertyRef Name="wordID" />
+          </Key>
+          <Property Name="langID" Type="int" Nullable="false" />
+          <Property Name="wordID" Type="int" Nullable="false" />
+          <Property Name="word" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Common_TranslateSizingWordId">
+          <Key>
+            <PropertyRef Name="wordID" />
+          </Key>
+          <Property Name="wordID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Common_Locale_Common_Language">
+          <End Role="Common_Language" Type="FlowConfigurationModel.Store.Common_Language" Multiplicity="1" />
+          <End Role="Common_Locale" Type="FlowConfigurationModel.Store.Common_Locale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_Language">
+              <PropertyRef Name="langID" />
+            </Principal>
+            <Dependent Role="Common_Locale">
+              <PropertyRef Name="languageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamily_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.Store.Common_TranslateSizingWordId" Multiplicity="1" />
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.Store.Common_ProductFamily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="wordID" />
+            </Principal>
+            <Dependent Role="Common_ProductFamily">
+              <PropertyRef Name="productFamilyName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamilyProductLine_Common_ProductFamily">
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.Store.Common_ProductFamily" Multiplicity="1" />
+          <End Role="Common_ProductFamilyProductLine" Type="FlowConfigurationModel.Store.Common_ProductFamilyProductLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductFamily">
+              <PropertyRef Name="productFamilyID" />
+            </Principal>
+            <Dependent Role="Common_ProductFamilyProductLine">
+              <PropertyRef Name="productFamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamilyProductLine_Common_ProductLine">
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.Store.Common_ProductLine" Multiplicity="1" />
+          <End Role="Common_ProductFamilyProductLine" Type="FlowConfigurationModel.Store.Common_ProductFamilyProductLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductLine">
+              <PropertyRef Name="productLineID" />
+            </Principal>
+            <Dependent Role="Common_ProductFamilyProductLine">
+              <PropertyRef Name="productLineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamilyPropertyRelation_Common_ProductFamily">
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.Store.Common_ProductFamily" Multiplicity="1" />
+          <End Role="Common_ProductFamilyPropertyRelation" Type="FlowConfigurationModel.Store.Common_ProductFamilyPropertyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductFamily">
+              <PropertyRef Name="productFamilyID" />
+            </Principal>
+            <Dependent Role="Common_ProductFamilyPropertyRelation">
+              <PropertyRef Name="productFamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamilyPropertyRelation_Common_ProductProperty">
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.Store.Common_ProductProperty" Multiplicity="1" />
+          <End Role="Common_ProductFamilyPropertyRelation" Type="FlowConfigurationModel.Store.Common_ProductFamilyPropertyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductProperty">
+              <PropertyRef Name="productPropertyID" />
+            </Principal>
+            <Dependent Role="Common_ProductFamilyPropertyRelation">
+              <PropertyRef Name="productPropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductLine_Common_TranslateSizingWordId">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.Store.Common_TranslateSizingWordId" Multiplicity="1" />
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.Store.Common_ProductLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="wordID" />
+            </Principal>
+            <Dependent Role="Common_ProductLine">
+              <PropertyRef Name="productLineName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductLinePropertyRelation_Common_ProductLine">
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.Store.Common_ProductLine" Multiplicity="1" />
+          <End Role="Common_ProductLinePropertyRelation" Type="FlowConfigurationModel.Store.Common_ProductLinePropertyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductLine">
+              <PropertyRef Name="productLineID" />
+            </Principal>
+            <Dependent Role="Common_ProductLinePropertyRelation">
+              <PropertyRef Name="productLineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductLinePropertyRelation_Common_ProductProperty">
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.Store.Common_ProductProperty" Multiplicity="1" />
+          <End Role="Common_ProductLinePropertyRelation" Type="FlowConfigurationModel.Store.Common_ProductLinePropertyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductProperty">
+              <PropertyRef Name="productPropertyID" />
+            </Principal>
+            <Dependent Role="Common_ProductLinePropertyRelation">
+              <PropertyRef Name="productPropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductProperty_Common_ProductPropertyGroup">
+          <End Role="Common_ProductPropertyGroup" Type="FlowConfigurationModel.Store.Common_ProductPropertyGroup" Multiplicity="1" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.Store.Common_ProductProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductPropertyGroup">
+              <PropertyRef Name="productPropertyGroupID" />
+            </Principal>
+            <Dependent Role="Common_ProductProperty">
+              <PropertyRef Name="productPropertyGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductProperty_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.Store.Common_TranslateSizingWordId" Multiplicity="1" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.Store.Common_ProductProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="wordID" />
+            </Principal>
+            <Dependent Role="Common_ProductProperty">
+              <PropertyRef Name="productPropertyNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductPropertyGroup_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.Store.Common_TranslateSizingWordId" Multiplicity="1" />
+          <End Role="Common_ProductPropertyGroup" Type="FlowConfigurationModel.Store.Common_ProductPropertyGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="wordID" />
+            </Principal>
+            <Dependent Role="Common_ProductPropertyGroup">
+              <PropertyRef Name="productPropertyGroupNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_TranslateSizingWordEntry_Common_Language">
+          <End Role="Common_Language" Type="FlowConfigurationModel.Store.Common_Language" Multiplicity="1" />
+          <End Role="Common_TranslateSizingWord" Type="FlowConfigurationModel.Store.Common_TranslateSizingWord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_Language">
+              <PropertyRef Name="langID" />
+            </Principal>
+            <Dependent Role="Common_TranslateSizingWord">
+              <PropertyRef Name="langID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.Store.Common_TranslateSizingWordId" Multiplicity="1" />
+          <End Role="Common_TranslateSizingWord" Type="FlowConfigurationModel.Store.Common_TranslateSizingWord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="wordID" />
+            </Principal>
+            <Dependent Role="Common_TranslateSizingWord">
+              <PropertyRef Name="wordID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FlowConfigurationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FlowConfigurationEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Common_Language" EntityType="FlowConfigurationModel.CommonLanguageVo" />
+          <EntitySet Name="Common_Locale" EntityType="FlowConfigurationModel.CommonLocaleVo" />
+          <EntitySet Name="Common_ProductFamily" EntityType="FlowConfigurationModel.CommonProductFamilyVo" />
+          <EntitySet Name="Common_ProductLine" EntityType="FlowConfigurationModel.CommonProductLineVo" />
+          <EntitySet Name="Common_ProductProperty" EntityType="FlowConfigurationModel.CommonProductPropertyVo" />
+          <EntitySet Name="Common_ProductPropertyGroup" EntityType="FlowConfigurationModel.CommonProductPropertyGroupVo" />
+          <EntitySet Name="Common_TranslateSizingWord" EntityType="FlowConfigurationModel.CommonTranslateSizingWordVo" />
+          <EntitySet Name="Common_TranslateSizingWordId" EntityType="FlowConfigurationModel.CommonTranslateSizingWordIdVo" />
+          <EntitySet Name="sysdiagrams" EntityType="FlowConfigurationModel.sysdiagrams" />
+          <AssociationSet Name="FK_Common_Locale_Common_Language" Association="FlowConfigurationModel.FK_Common_Locale_Common_Language">
+            <End Role="Common_Language" EntitySet="Common_Language" />
+            <End Role="Common_Locale" EntitySet="Common_Locale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_TranslateSizingWordEntry_Common_Language" Association="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_Language">
+            <End Role="Common_Language" EntitySet="Common_Language" />
+            <End Role="Common_TranslateSizingWord" EntitySet="Common_TranslateSizingWord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductFamily_Common_TranslateSizingWord" Association="FlowConfigurationModel.FK_Common_ProductFamily_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductLine_Common_TranslateSizingWordId" Association="FlowConfigurationModel.FK_Common_ProductLine_Common_TranslateSizingWordId">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductProperty_Common_ProductPropertyGroup" Association="FlowConfigurationModel.FK_Common_ProductProperty_Common_ProductPropertyGroup">
+            <End Role="Common_ProductPropertyGroup" EntitySet="Common_ProductPropertyGroup" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductProperty_Common_TranslateSizingWord" Association="FlowConfigurationModel.FK_Common_ProductProperty_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_ProductPropertyGroup_Common_TranslateSizingWord" Association="FlowConfigurationModel.FK_Common_ProductPropertyGroup_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_ProductPropertyGroup" EntitySet="Common_ProductPropertyGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord" Association="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord">
+            <End Role="Common_TranslateSizingWordId" EntitySet="Common_TranslateSizingWordId" />
+            <End Role="Common_TranslateSizingWord" EntitySet="Common_TranslateSizingWord" />
+          </AssociationSet>
+          <AssociationSet Name="Common_ProductFamilyProductLine" Association="FlowConfigurationModel.Common_ProductFamilyProductLine">
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+          </AssociationSet>
+          <AssociationSet Name="Common_ProductFamilyPropertyRelation" Association="FlowConfigurationModel.Common_ProductFamilyPropertyRelation">
+            <End Role="Common_ProductFamily" EntitySet="Common_ProductFamily" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+          <AssociationSet Name="Common_ProductLinePropertyRelation" Association="FlowConfigurationModel.Common_ProductLinePropertyRelation">
+            <End Role="Common_ProductLine" EntitySet="Common_ProductLine" />
+            <End Role="Common_ProductProperty" EntitySet="Common_ProductProperty" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CommonLanguageVo">
+          <Key>
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="LangId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Common_Locale" Relationship="FlowConfigurationModel.FK_Common_Locale_Common_Language" FromRole="Common_Language" ToRole="Common_Locale" />
+          <NavigationProperty Name="Common_TranslateSizingWord" Relationship="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_Language" FromRole="Common_Language" ToRole="Common_TranslateSizingWord" />
+        </EntityType>
+        <EntityType Name="CommonLocaleVo">
+          <Key>
+            <PropertyRef Name="LocaleId" />
+          </Key>
+          <Property Name="LocaleId" Type="Int32" Nullable="false" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="LocaleCode" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Common_Language" Relationship="FlowConfigurationModel.FK_Common_Locale_Common_Language" FromRole="Common_Locale" ToRole="Common_Language" />
+        </EntityType>
+        <EntityType Name="CommonProductFamilyVo">
+          <Key>
+            <PropertyRef Name="ProductFamilyId" />
+          </Key>
+          <Property Name="ProductFamilyId" Type="Int32" Nullable="false" />
+          <Property Name="ProductFamilyName" Type="Int32" Nullable="false" />
+          <Property Name="DisplaySequence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Common_TranslateSizingWordId" Relationship="FlowConfigurationModel.FK_Common_ProductFamily_Common_TranslateSizingWord" FromRole="Common_ProductFamily" ToRole="Common_TranslateSizingWordId" />
+          <NavigationProperty Name="Common_ProductLine" Relationship="FlowConfigurationModel.Common_ProductFamilyProductLine" FromRole="Common_ProductFamily" ToRole="Common_ProductLine" />
+          <NavigationProperty Name="Common_ProductProperty" Relationship="FlowConfigurationModel.Common_ProductFamilyPropertyRelation" FromRole="Common_ProductFamily" ToRole="Common_ProductProperty" />
+        </EntityType>
+        <EntityType Name="CommonProductLineVo">
+          <Key>
+            <PropertyRef Name="ProductLineId" />
+          </Key>
+          <Property Name="ProductLineId" Type="Int32" Nullable="false" />
+          <Property Name="ProductLineName" Type="Int32" Nullable="false" />
+          <Property Name="DisplaySequence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Common_TranslateSizingWordId" Relationship="FlowConfigurationModel.FK_Common_ProductLine_Common_TranslateSizingWordId" FromRole="Common_ProductLine" ToRole="Common_TranslateSizingWordId" />
+          <NavigationProperty Name="Common_ProductFamily" Relationship="FlowConfigurationModel.Common_ProductFamilyProductLine" FromRole="Common_ProductLine" ToRole="Common_ProductFamily" />
+          <NavigationProperty Name="Common_ProductProperty" Relationship="FlowConfigurationModel.Common_ProductLinePropertyRelation" FromRole="Common_ProductLine" ToRole="Common_ProductProperty" />
+        </EntityType>
+        <EntityType Name="CommonProductPropertyVo">
+          <Key>
+            <PropertyRef Name="ProductPropertyId" />
+          </Key>
+          <Property Name="ProductPropertyId" Type="Int32" Nullable="false" />
+          <Property Name="ProductPropertyNameId" Type="Int32" Nullable="false" />
+          <Property Name="ProductPropertyGroupId" Type="Int32" Nullable="false" />
+          <Property Name="DisplaySequence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Common_ProductPropertyGroup" Relationship="FlowConfigurationModel.FK_Common_ProductProperty_Common_ProductPropertyGroup" FromRole="Common_ProductProperty" ToRole="Common_ProductPropertyGroup" />
+          <NavigationProperty Name="Common_TranslateSizingWordId" Relationship="FlowConfigurationModel.FK_Common_ProductProperty_Common_TranslateSizingWord" FromRole="Common_ProductProperty" ToRole="Common_TranslateSizingWordId" />
+          <NavigationProperty Name="Common_ProductFamily" Relationship="FlowConfigurationModel.Common_ProductFamilyPropertyRelation" FromRole="Common_ProductProperty" ToRole="Common_ProductFamily" />
+          <NavigationProperty Name="Common_ProductLine" Relationship="FlowConfigurationModel.Common_ProductLinePropertyRelation" FromRole="Common_ProductProperty" ToRole="Common_ProductLine" />
+        </EntityType>
+        <EntityType Name="CommonProductPropertyGroupVo">
+          <Key>
+            <PropertyRef Name="ProductPropertyGroupId" />
+          </Key>
+          <Property Name="ProductPropertyGroupId" Type="Int32" Nullable="false" />
+          <Property Name="ProductPropertyGroupNameId" Type="Int32" Nullable="false" />
+          <Property Name="DisplaySequence" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Common_ProductProperty" Relationship="FlowConfigurationModel.FK_Common_ProductProperty_Common_ProductPropertyGroup" FromRole="Common_ProductPropertyGroup" ToRole="Common_ProductProperty" />
+          <NavigationProperty Name="Common_TranslateSizingWordId" Relationship="FlowConfigurationModel.FK_Common_ProductPropertyGroup_Common_TranslateSizingWord" FromRole="Common_ProductPropertyGroup" ToRole="Common_TranslateSizingWordId" />
+        </EntityType>
+        <EntityType Name="CommonTranslateSizingWordVo">
+          <Key>
+            <PropertyRef Name="LangId" />
+            <PropertyRef Name="WordId" />
+          </Key>
+          <Property Name="LangId" Type="Int32" Nullable="false" />
+          <Property Name="WordId" Type="Int32" Nullable="false" />
+          <Property Name="Word" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Common_Language" Relationship="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_Language" FromRole="Common_TranslateSizingWord" ToRole="Common_Language" />
+          <NavigationProperty Name="Common_TranslateSizingWordId" Relationship="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord" FromRole="Common_TranslateSizingWord" ToRole="Common_TranslateSizingWordId" />
+        </EntityType>
+        <EntityType Name="CommonTranslateSizingWordIdVo">
+          <Key>
+            <PropertyRef Name="WordId" />
+          </Key>
+          <Property Name="WordId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Common_ProductFamily" Relationship="FlowConfigurationModel.FK_Common_ProductFamily_Common_TranslateSizingWord" FromRole="Common_TranslateSizingWordId" ToRole="Common_ProductFamily" />
+          <NavigationProperty Name="Common_ProductLine" Relationship="FlowConfigurationModel.FK_Common_ProductLine_Common_TranslateSizingWordId" FromRole="Common_TranslateSizingWordId" ToRole="Common_ProductLine" />
+          <NavigationProperty Name="Common_ProductProperty" Relationship="FlowConfigurationModel.FK_Common_ProductProperty_Common_TranslateSizingWord" FromRole="Common_TranslateSizingWordId" ToRole="Common_ProductProperty" />
+          <NavigationProperty Name="Common_ProductPropertyGroup" Relationship="FlowConfigurationModel.FK_Common_ProductPropertyGroup_Common_TranslateSizingWord" FromRole="Common_TranslateSizingWordId" ToRole="Common_ProductPropertyGroup" />
+          <NavigationProperty Name="Common_TranslateSizingWord" Relationship="FlowConfigurationModel.FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord" FromRole="Common_TranslateSizingWordId" ToRole="Common_TranslateSizingWord" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Common_Locale_Common_Language">
+          <End Role="Common_Language" Type="FlowConfigurationModel.CommonLanguageVo" Multiplicity="1" />
+          <End Role="Common_Locale" Type="FlowConfigurationModel.CommonLocaleVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_Language">
+              <PropertyRef Name="LangId" />
+            </Principal>
+            <Dependent Role="Common_Locale">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_TranslateSizingWordEntry_Common_Language">
+          <End Role="Common_Language" Type="FlowConfigurationModel.CommonLanguageVo" Multiplicity="1" />
+          <End Role="Common_TranslateSizingWord" Type="FlowConfigurationModel.CommonTranslateSizingWordVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_Language">
+              <PropertyRef Name="LangId" />
+            </Principal>
+            <Dependent Role="Common_TranslateSizingWord">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductFamily_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.CommonTranslateSizingWordIdVo" Multiplicity="1" />
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.CommonProductFamilyVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="WordId" />
+            </Principal>
+            <Dependent Role="Common_ProductFamily">
+              <PropertyRef Name="ProductFamilyName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductLine_Common_TranslateSizingWordId">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.CommonTranslateSizingWordIdVo" Multiplicity="1" />
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.CommonProductLineVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="WordId" />
+            </Principal>
+            <Dependent Role="Common_ProductLine">
+              <PropertyRef Name="ProductLineName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductProperty_Common_ProductPropertyGroup">
+          <End Role="Common_ProductPropertyGroup" Type="FlowConfigurationModel.CommonProductPropertyGroupVo" Multiplicity="1" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.CommonProductPropertyVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_ProductPropertyGroup">
+              <PropertyRef Name="ProductPropertyGroupId" />
+            </Principal>
+            <Dependent Role="Common_ProductProperty">
+              <PropertyRef Name="ProductPropertyGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductProperty_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.CommonTranslateSizingWordIdVo" Multiplicity="1" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.CommonProductPropertyVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="WordId" />
+            </Principal>
+            <Dependent Role="Common_ProductProperty">
+              <PropertyRef Name="ProductPropertyNameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_ProductPropertyGroup_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.CommonTranslateSizingWordIdVo" Multiplicity="1" />
+          <End Role="Common_ProductPropertyGroup" Type="FlowConfigurationModel.CommonProductPropertyGroupVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="WordId" />
+            </Principal>
+            <Dependent Role="Common_ProductPropertyGroup">
+              <PropertyRef Name="ProductPropertyGroupNameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Common_TranslateSizingWordEntry_Common_TranslateSizingWord">
+          <End Role="Common_TranslateSizingWordId" Type="FlowConfigurationModel.CommonTranslateSizingWordIdVo" Multiplicity="1" />
+          <End Role="Common_TranslateSizingWord" Type="FlowConfigurationModel.CommonTranslateSizingWordVo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Common_TranslateSizingWordId">
+              <PropertyRef Name="WordId" />
+            </Principal>
+            <Dependent Role="Common_TranslateSizingWord">
+              <PropertyRef Name="WordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Common_ProductFamilyProductLine">
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.CommonProductFamilyVo" Multiplicity="*" />
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.CommonProductLineVo" Multiplicity="*" />
+        </Association>
+        <Association Name="Common_ProductFamilyPropertyRelation">
+          <End Role="Common_ProductFamily" Type="FlowConfigurationModel.CommonProductFamilyVo" Multiplicity="*" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.CommonProductPropertyVo" Multiplicity="*" />
+        </Association>
+        <Association Name="Common_ProductLinePropertyRelation">
+          <End Role="Common_ProductLine" Type="FlowConfigurationModel.CommonProductLineVo" Multiplicity="*" />
+          <End Role="Common_ProductProperty" Type="FlowConfigurationModel.CommonProductPropertyVo" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FlowConfigurationModelStoreContainer" CdmEntityContainer="FlowConfigurationEntities">
+          <EntitySetMapping Name="Common_Language">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonLanguageVo">
+              <MappingFragment StoreEntitySet="Common_Language">
+                <ScalarProperty Name="LangId" ColumnName="langID" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_Locale">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonLocaleVo">
+              <MappingFragment StoreEntitySet="Common_Locale">
+                <ScalarProperty Name="LocaleId" ColumnName="localeID" />
+                <ScalarProperty Name="LanguageId" ColumnName="languageID" />
+                <ScalarProperty Name="LocaleCode" ColumnName="localeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_ProductFamily">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonProductFamilyVo">
+              <MappingFragment StoreEntitySet="Common_ProductFamily">
+                <ScalarProperty Name="ProductFamilyId" ColumnName="productFamilyID" />
+                <ScalarProperty Name="ProductFamilyName" ColumnName="productFamilyName" />
+                <ScalarProperty Name="DisplaySequence" ColumnName="displaySequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_ProductLine">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonProductLineVo">
+              <MappingFragment StoreEntitySet="Common_ProductLine">
+                <ScalarProperty Name="ProductLineId" ColumnName="productLineID" />
+                <ScalarProperty Name="ProductLineName" ColumnName="productLineName" />
+                <ScalarProperty Name="DisplaySequence" ColumnName="displaySequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_ProductProperty">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonProductPropertyVo">
+              <MappingFragment StoreEntitySet="Common_ProductProperty">
+                <ScalarProperty Name="ProductPropertyId" ColumnName="productPropertyID" />
+                <ScalarProperty Name="ProductPropertyNameId" ColumnName="productPropertyNameID" />
+                <ScalarProperty Name="ProductPropertyGroupId" ColumnName="productPropertyGroupID" />
+                <ScalarProperty Name="DisplaySequence" ColumnName="displaySequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_ProductPropertyGroup">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonProductPropertyGroupVo">
+              <MappingFragment StoreEntitySet="Common_ProductPropertyGroup">
+                <ScalarProperty Name="ProductPropertyGroupId" ColumnName="productPropertyGroupID" />
+                <ScalarProperty Name="ProductPropertyGroupNameId" ColumnName="productPropertyGroupNameID" />
+                <ScalarProperty Name="DisplaySequence" ColumnName="displaySequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_TranslateSizingWord">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonTranslateSizingWordVo">
+              <MappingFragment StoreEntitySet="Common_TranslateSizingWord">
+                <ScalarProperty Name="LangId" ColumnName="langID" />
+                <ScalarProperty Name="WordId" ColumnName="wordID" />
+                <ScalarProperty Name="Word" ColumnName="word" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Common_TranslateSizingWordId">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.CommonTranslateSizingWordIdVo">
+              <MappingFragment StoreEntitySet="Common_TranslateSizingWordId">
+                <ScalarProperty Name="WordId" ColumnName="wordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FlowConfigurationModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Common_ProductFamilyProductLine" TypeName="FlowConfigurationModel.Common_ProductFamilyProductLine" StoreEntitySet="Common_ProductFamilyProductLine">
+            <EndProperty Name="Common_ProductFamily">
+              <ScalarProperty Name="ProductFamilyId" ColumnName="productFamilyID" />
+            </EndProperty>
+            <EndProperty Name="Common_ProductLine">
+              <ScalarProperty Name="ProductLineId" ColumnName="productLineID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Common_ProductFamilyPropertyRelation" TypeName="FlowConfigurationModel.Common_ProductFamilyPropertyRelation" StoreEntitySet="Common_ProductFamilyPropertyRelation">
+            <EndProperty Name="Common_ProductFamily">
+              <ScalarProperty Name="ProductFamilyId" ColumnName="productFamilyID" />
+            </EndProperty>
+            <EndProperty Name="Common_ProductProperty">
+              <ScalarProperty Name="ProductPropertyId" ColumnName="productPropertyID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Common_ProductLinePropertyRelation" TypeName="FlowConfigurationModel.Common_ProductLinePropertyRelation" StoreEntitySet="Common_ProductLinePropertyRelation">
+            <EndProperty Name="Common_ProductLine">
+              <ScalarProperty Name="ProductLineId" ColumnName="productLineID" />
+            </EndProperty>
+            <EndProperty Name="Common_ProductProperty">
+              <ScalarProperty Name="ProductPropertyId" ColumnName="productPropertyID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

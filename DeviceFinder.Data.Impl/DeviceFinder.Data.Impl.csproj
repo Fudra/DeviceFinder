@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4EB732B-4E7B-4EBE-9060-84211719C7B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeviceFinder.Data.Impl</RootNamespace>
+    <AssemblyName>DeviceFinder.Data.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.2, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ExcelDataReader.2.1.2.2\lib\net45\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\libs\SharpZipLib\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\DataAccessObject.cs" />
+    <Compile Include="DataModule.cs" />
+    <Compile Include="Entity\CommonLanguageVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonLocaleVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonProductFamilyVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonProductLineVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonProductPropertyGroupVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonProductPropertyVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonTranslateSizingWordIdVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CommonTranslateSizingWordVo.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FlowConfigurationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlowConfigurationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FlowConfigurationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FlowConfigurationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlowConfigurationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagrams.cs">
+      <DependentUpon>FlowConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vo\Cell.cs" />
+    <Compile Include="Vo\CommonLanguageVo.cs" />
+    <Compile Include="Vo\CommonLocaleVo.cs" />
+    <Compile Include="Vo\CommonProductFamilyVo.cs" />
+    <Compile Include="Vo\CommonProductLineVo.cs" />
+    <Compile Include="Vo\CommonProductPropertyGroupVo.cs" />
+    <Compile Include="Vo\CommonProductPropertyVo.cs" />
+    <Compile Include="Vo\CommonTranslateSizingWordIdVo.cs" />
+    <Compile Include="Vo\CommonTranslateSizingWordVo.cs" />
+    <Compile Include="Vo\ModelVo.cs" />
+    <Compile Include="Vo\PhaseTypeVo.cs" />
+    <Compile Include="Vo\CommonProductLinePropertyRelationVo.cs" />
+    <Compile Include="Vo\ProductLinePropertyVo.cs" />
+    <Compile Include="Vo\ProductLineVo.cs" />
+    <Compile Include="Vo\TechnologyVo.cs" />
+    <Compile Include="Vo\TranslationVo.cs" />
+    <Compile Include="Vo\ViewVo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entity\FlowConfigurationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FlowConfigurationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Entity\FlowConfigurationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FlowConfigurationModel.edmx</DependentUpon>
+      <LastGenOutput>FlowConfigurationModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entity\FlowConfigurationModel.edmx.diagram">
+      <DependentUpon>FlowConfigurationModel.edmx</DependentUpon>
+    </None>
+    <None Include="Entity\FlowConfigurationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FlowConfigurationModel.edmx</DependentUpon>
+      <LastGenOutput>FlowConfigurationModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crosscutting\Crosscutting.csproj">
+      <Project>{198dcd94-e146-4118-9d09-27a70c7998a1}</Project>
+      <Name>Crosscutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceFinder.Data.Interface\DeviceFinder.Data.Interface.csproj">
+      <Project>{890a3099-2c46-4cd0-b8e3-570d2afe9182}</Project>
+      <Name>DeviceFinder.Data.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
